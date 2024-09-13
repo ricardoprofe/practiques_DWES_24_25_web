@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-UK" xml:lang="en-UK" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>Unit 02. Practice 2.1</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../web_template/aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+      
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Unit 02. Practice 2.1</h1>
+            <!---->
+            <!--  -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                 <ul>
+<li><a href="#practice-2.1.-strings-arrays-and-dates"
+id="toc-practice-2.1.-strings-arrays-and-dates"><span
+class="toc-section-number">1</span> Practice 2.1. Strings, arrays and
+dates</a>
+<ul>
+<li><a href="#exercise-1" id="toc-exercise-1"><span
+class="toc-section-number">1.1</span> Exercise 1</a></li>
+<li><a href="#exercise-2" id="toc-exercise-2"><span
+class="toc-section-number">1.2</span> Exercise 2</a></li>
+<li><a href="#exercise-3" id="toc-exercise-3"><span
+class="toc-section-number">1.3</span> Exercise 3</a></li>
+<li><a href="#exercise-4" id="toc-exercise-4"><span
+class="toc-section-number">1.4</span> Exercise 4</a></li>
+<li><a href="#exercise-5" id="toc-exercise-5"><span
+class="toc-section-number">1.5</span> Exercise 5</a></li>
+</ul></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <h1 data-number="1"
+            id="practice-2.1.-strings-arrays-and-dates"><span
+            class="header-section-number">1</span> Practice 2.1.
+            Strings, arrays and dates</h1>
+            <blockquote>
+            <p>This practice consists of a series of exercises. Create a
+            folder inside your local server with the name
+            <code>prac02</code> and do each exercise in a new file
+            inside the folder.</p>
+            <p>The inclusion of comments in the scripts will be
+            valued.</p>
+            <p>Once done, compress the folder, add your name to the
+            compressed file and submit it via
+            <strong>Aules</strong>.</p>
+            </blockquote>
+            <h2 data-number="1.1" id="exercise-1"><span
+            class="header-section-number">1.1</span> Exercise 1</h2>
+            <p>Make a script that read from a query string a circle’s
+            radius value and show the diameter, circumference
+            (perimeter) and area values. Define a constant for the
+            <strong>PI</strong> value.</p>
+            <p>(Optional) Make a second version using the
+            <strong>M_PI</strong> constant instead of the defined
+            one.</p>
+            <h2 data-number="1.2" id="exercise-2"><span
+            class="header-section-number">1.2</span> Exercise 2</h2>
+            <p>Make a script that reads from a query string 2 values,
+            city and country. Store the values in a associative array
+            with the keys “city” and “country”.</p>
+            <p>Then, do the next operations, using the array:</p>
+            <ul>
+            <li>Show the read values</li>
+            <li>Show the length of each value</li>
+            <li>Show both values in uppercase and in lowercase</li>
+            <li>Show the number of times the letter ‘a’, uppercase and
+            lowercase, appears in each value (you can choose the letter
+            you want to be shown)</li>
+            <li>Show both values replacing the letter ‘o’, uppercase or
+            lowercase, by the number 0 (you can choose the characters
+            you want)</li>
+            </ul>
+            <h2 data-number="1.3" id="exercise-3"><span
+            class="header-section-number">1.3</span> Exercise 3</h2>
+            <p>Make a script that generates 7 random numbers to play the
+            <a href="https://www.euromillones.com.es/">Euromillones</a>
+            game. The first 5 numbers must be between 1 and 50, and the
+            last 2 numbers must be between 1 and 12. Use the function <a
+            href="https://www.php.net/manual/en/function.mt-rand">mt_rand()</a>
+            (read the documentation).</p>
+            <p>The numbers must be stored in two numeric arrays, one for
+            the numbers between 1 and 50 and the other for the numbers
+            from 1 to 12. Don’t worry if the numbers are repeated.</p>
+            <p>Once stored, show them using the arrays orderly, from
+            least to greatest number.</p>
+            <h2 data-number="1.4" id="exercise-4"><span
+            class="header-section-number">1.4</span> Exercise 4</h2>
+            <p>Read a date via query string with the values day, month
+            and year as integers. Using a <strong>DateTime
+            object</strong>, show the read and the current date
+            formatted (for instance “Saturday the 13th of April, 2019”)
+            and the difference in days between them.</p>
+            <p>Also show both dates as Unix timestamps.</p>
+            <h2 data-number="1.5" id="exercise-5"><span
+            class="header-section-number">1.5</span> Exercise 5</h2>
+            <p>Make a numeric array with the names of 4 meals. Then do
+            the next operations:</p>
+            <ul>
+            <li>Show the array as a string with the elements separated
+            by commas.</li>
+            <li>Show the array ordered alphabetically, in ascending
+            order.</li>
+            <li>Show the array ordered alphabetically, in descending
+            order.</li>
+            <li>Show the position of your favorite meal in the
+            array.</li>
+            </ul>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <!-- Snackbar for copy code -->
+        <div id="snackbar">Codi copiat!</div>
+        <!-- End Snackbar -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+                        
+            /* PER COPIAR CODI */
+
+
+            // Busca tots els elements amb la classe "sourceCode"
+            var sourceCodeElements = document.querySelectorAll('div.sourceCode');
+
+            /*Afegim el botó a tots els divs */
+            // Afegir un botó per a cada element "sourceCode"
+            sourceCodeElements.forEach(function(element) {
+                console.log(element.id);
+                var button = document.createElement('div');
+                button.className = 'button-copy';
+
+                // Afegir una icona al botó (fa servir FontAwesome com a exemple)
+                //var icon = document.createElement('i');
+                //icon.className = 'fas fa-copy'; // Utilitza l'ícona "copy" de FontAwesome
+
+                // Obté l'ID de l'element actual
+                var elementId = element.id;
+
+                // Afegeix un event listener al botó per cridar la funció amb l'ID
+                button.addEventListener('click', function() {
+                    copyContent(elementId);
+                });
+
+                // Afegeix l'icona al botó i el botó just dins de l'element "sourceCode"
+                //button.appendChild(icon);
+                element.appendChild(button);
+            });
+
+
+
+            // Funció per copiar el contingut d'un element amb l'ID donat
+            function copyContent(elementId) {
+                var element = document.getElementById(elementId);
+                var textToCopy = element.innerText;
+
+                // Crea un element de text i copia el contingut
+                var textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                // Selecciona i copia el text
+                textArea.select();
+                document.execCommand('copy');
+
+                // Elimina l'element de text afegit temporalment
+                document.body.removeChild(textArea);
+
+                // Notifica a l'usuari que el codi s'ha copiat
+                mostraSnackbar();
+            }
+
+            /* SNACKBAR EN COPIAR CODI */
+
+            function mostraSnackbar() {
+            // Busquem l'snackbar
+            var x = document.getElementById("snackbar");
+
+            // Li afegim la classe show
+            x.className = "show";
+
+            // I als tres segons la llevem
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            } 
+
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>
