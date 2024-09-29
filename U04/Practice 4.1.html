@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-UK" xml:lang="en-UK" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>Unit 04. Practice 4.1</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../web_template/aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+      
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Unit 04. Practice 4.1</h1>
+            <!---->
+            <!--  -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                 <ul>
+<li><a href="#practice-4.1.-forms" id="toc-practice-4.1.-forms"><span
+class="toc-section-number">1</span> Practice 4.1. Forms</a>
+<ul>
+<li><a href="#part-1" id="toc-part-1"><span
+class="toc-section-number">1.1</span> Part 1</a></li>
+<li><a href="#part-2" id="toc-part-2"><span
+class="toc-section-number">1.2</span> Part 2</a></li>
+<li><a href="#part-3" id="toc-part-3"><span
+class="toc-section-number">1.3</span> Part 3</a></li>
+<li><a href="#how-to-submit-to-github-classroom"
+id="toc-how-to-submit-to-github-classroom"><span
+class="toc-section-number">1.4</span> How to submit to GitHub
+Classroom</a></li>
+</ul></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <h1 data-number="1" id="practice-4.1.-forms"><span
+            class="header-section-number">1</span> Practice 4.1.
+            Forms</h1>
+            <blockquote>
+            <p>This practice consists of the first of a series of
+            practices, consisting of a Contacts application. Each
+            practice will be based on the previous one. To start, clone
+            the repository task as explained in the end of the
+            practice.</p>
+            <p>The inclusion of comments in the scripts will be
+            valued.</p>
+            <p>Once done, do the submission via GitHub Classroom as
+            detailed in the end of the practice.</p>
+            </blockquote>
+            <h2 data-number="1.1" id="part-1"><span
+            class="header-section-number">1.1</span> Part 1</h2>
+            <p>Create a self-validated form, called
+            <code>contact_form.php</code>, with the next fields:</p>
+            <ul>
+            <li><strong>ID</strong>: a text input. We don’t want the
+            user to change its value, so set it to
+            <code>readonly</code>.</li>
+            <li><strong>Title</strong>: a set of radio buttons with the
+            options “Mr.”, “Mrs.” and “Miss”. Default “Mr.”.</li>
+            <li><strong>First name</strong> and
+            <strong>surname</strong>: text inputs</li>
+            <li><strong>Birth date</strong>: a <strong>date</strong>
+            input.</li>
+            <li><strong>Phone</strong> and <strong>email</strong>: text
+            inputs.</li>
+            <li><strong>Type</strong>: a set of checkboxes with the
+            values “Favorite”, “Important” and “Archived”.</li>
+            <li><strong>3 input buttons</strong>: Save, Update and
+            Delete.</li>
+            </ul>
+            <figure>
+            <img src="images/form.png" width="400" alt="Contact form" />
+            <figcaption aria-hidden="true">Contact form</figcaption>
+            </figure>
+            <p>Feel free to give the page the style you want. You can
+            also use a framework like Bootstrap.</p>
+            <p>We want to do the next <strong>validations</strong>:</p>
+            <ul>
+            <li><strong>name</strong>, <strong>surname</strong> and
+            <strong>birthdate</strong>: required. As the date input must
+            be of type date, we don’t need validation, because it has
+            the form “yyyy-mm-dd”.</li>
+            <li><strong>title</strong>: if it has no value, assign the
+            default value “Mr.”</li>
+            <li><strong>phone</strong>: required and must be a valid
+            phone number (use <code>preg_match()</code> and regular
+            expressions).</li>
+            <li><strong>email</strong>: required and must be a valid
+            email (use <code>filter_var()</code>).</li>
+            <li><strong>id</strong> and <strong>type</strong>: we don’t
+            need any validation.</li>
+            </ul>
+            <p>Do the validation with a <strong>function</strong> placed
+            in a script called <code>functions.php</code>. You can use
+            this script to place another functions you use in this
+            practice.</p>
+            <p>When the user pushes the “Save” button, do the
+            validation. If all the data is correct, open a new script,
+            called <code>checkdata.php</code>, that shows the message
+            “No errors!” and all the data of the new contact. Use for
+            this <strong><code>header()</code></strong> and
+            <strong>session variables</strong>.</p>
+            <blockquote>
+            <p><strong>Note</strong>: <strong>All the validation must be
+            done in PHP</strong>, so don’t use the <code>required</code>
+            HTML attribute or the types <code>phone</code> and
+            <code>email</code> on the form inputs.</p>
+            </blockquote>
+            <blockquote>
+            <p><strong>Important</strong>: If you are programming in
+            Windows, make sure <strong>all the folders and files are
+            written in lowercase</strong>, to prevent errors in Linux
+            servers.</p>
+            </blockquote>
+            <h2 data-number="1.2" id="part-2"><span
+            class="header-section-number">1.2</span> Part 2</h2>
+            <p>Create a php page, called <code>contact_list.php</code>,
+            which shows a table with the next data from the sample array
+            provided in the GitHub repository:</p>
+            <figure>
+            <img src="images/table.png" width="400"
+            alt="Contact list" />
+            <figcaption aria-hidden="true">Contact list</figcaption>
+            </figure>
+            <p>Feel free to give the page the style you want.</p>
+            <p>In each row, make an <em>“Edit/View”</em> button which,
+            when pressed, opens the <code>contact_form.php</code> form
+            and send to it the contact <strong>id</strong>. You can do
+            this with the <code>GET</code> method. Then, the form will
+            show all the data associated with the contact identified by
+            the id (use the contacts array). When the user presses the
+            <em>Update</em> button, the form will do all the
+            validations.</p>
+            <p>In the <code>contact_list.php</code> page, make a button
+            with the text “Create new contact”. When pressed, it will
+            open the <code>contact_form.php</code> form without data in
+            the inputs (only the default value for <em>title</em>).</p>
+            <p>Optionally, if the form has been opened from the contact
+            list, disable the “Save” button (attribute
+            <code>disabled</code>). If the form has been opened directly
+            or from the “Create new contact” button, disable the
+            “Update” and “Delete” buttons.</p>
+            <p>You can use the <code>showTable</code> function of the
+            previous practice to do the table.</p>
+            <p>In this practice we won’t use the <em>Delete</em>
+            button.</p>
+            <h2 data-number="1.3" id="part-3"><span
+            class="header-section-number">1.3</span> Part 3</h2>
+            <p>Make at least 2 partials, one for the beginning and the
+            other for the end of your pages, and change your existing
+            pages to use the partials.</p>
+            <p>These partials must include variables for the title,
+            author, header, etc. Add a footer to the final partial.</p>
+            <h2 data-number="1.4"
+            id="how-to-submit-to-github-classroom"><span
+            class="header-section-number">1.4</span> How to submit to
+            GitHub Classroom</h2>
+            <ol type="1">
+            <li>You need a <a href="https://github.com">GitHub</a>
+            account. Create one if you don’t have any.</li>
+            <li>Click on the <a href="">assignment invitation link</a>.
+            Enter your GitHub credentials and authorize GitHub Classroom
+            to access your GiHub account.</li>
+            <li>Select your name from the “Join the Classroom”
+            list.</li>
+            <li>Accept the assignment.</li>
+            <li>Go to your assignment repository. Clone it and start
+            coding.</li>
+            <li>Once you finish the task, make a commit with the comment
+            “SUBMISSION COMMIT PRACTICE 4.1” and push it to GitHub.
+            Before that, you can do the commits and pushes you want. If
+            you change your code after your submission commit, make
+            another commit and push with the same text in the message
+            adding the corrections you’ve done (for instance:
+            “SUBMISSION COMMIT PRACTICE 4.1, corrected function
+            mistake”). Make a pull-request if you want so i could know
+            your code is submitted.</li>
+            </ol>
+            <p>If you have any doubt in your task, you can push your
+            code and ask me by email what’s your problem. It will make
+            it easier for both the solutions of code issues.</p>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <!-- Snackbar for copy code -->
+        <div id="snackbar">Codi copiat!</div>
+        <!-- End Snackbar -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+                        
+            /* PER COPIAR CODI */
+
+
+            // Busca tots els elements amb la classe "sourceCode"
+            var sourceCodeElements = document.querySelectorAll('div.sourceCode');
+
+            /*Afegim el botó a tots els divs */
+            // Afegir un botó per a cada element "sourceCode"
+            sourceCodeElements.forEach(function(element) {
+                console.log(element.id);
+                var button = document.createElement('div');
+                button.className = 'button-copy';
+
+                // Afegir una icona al botó (fa servir FontAwesome com a exemple)
+                //var icon = document.createElement('i');
+                //icon.className = 'fas fa-copy'; // Utilitza l'ícona "copy" de FontAwesome
+
+                // Obté l'ID de l'element actual
+                var elementId = element.id;
+
+                // Afegeix un event listener al botó per cridar la funció amb l'ID
+                button.addEventListener('click', function() {
+                    copyContent(elementId);
+                });
+
+                // Afegeix l'icona al botó i el botó just dins de l'element "sourceCode"
+                //button.appendChild(icon);
+                element.appendChild(button);
+            });
+
+
+
+            // Funció per copiar el contingut d'un element amb l'ID donat
+            function copyContent(elementId) {
+                var element = document.getElementById(elementId);
+                var textToCopy = element.innerText;
+
+                // Crea un element de text i copia el contingut
+                var textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                // Selecciona i copia el text
+                textArea.select();
+                document.execCommand('copy');
+
+                // Elimina l'element de text afegit temporalment
+                document.body.removeChild(textArea);
+
+                // Notifica a l'usuari que el codi s'ha copiat
+                mostraSnackbar();
+            }
+
+            /* SNACKBAR EN COPIAR CODI */
+
+            function mostraSnackbar() {
+            // Busquem l'snackbar
+            var x = document.getElementById("snackbar");
+
+            // Li afegim la classe show
+            x.className = "show";
+
+            // I als tres segons la llevem
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            } 
+
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>
