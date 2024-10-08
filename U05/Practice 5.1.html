@@ -158,8 +158,8 @@ Classroom</a></li>
             <li>$archived (bool)</li>
             </ul>
             <p>Each property must have its <strong>set</strong> and
-            <strong>get</strong> methods. These methods must be
-            <strong>strictly typed</strong>.</p>
+            <strong>get</strong> methods. These methods and the class
+            must be <strong>strictly typed</strong>.</p>
             <p>Add a <strong>constructor</strong> that gets an optional
             array as parameter and assigns the values of the array to
             the object properties. If no parameters are passed, assign
@@ -182,20 +182,26 @@ Classroom</a></li>
             <p>Move the functions <code>checkContactDate</code> and
             <code>checkBirthday</code> from the file
             <code>functions.php</code> from the Unit 3 to the class.
-            They will become class methods. Their signatures should
-            be:</p>
+            Also move the function <code>validateContact</code> from the
+            <code>functions.php</code> file of the practice 4.1 to the
+            class. They will become class methods. Their signatures
+            should be:</p>
             <ul>
             <li><strong><code>checkContactDate() : bool</code></strong></li>
             <li><strong><code>checkBirthday() : ?int</code></strong></li>
+            <li><strong><code>validate() : array</code></strong></li>
             </ul>
             <p>In addition to the previous validations and
             functionality, do the next validations with these
             methods:</p>
             <ul>
-            <li><p>Use the <code>checkContactDate</code> function to
+            <li><p>Use the <code>validate()</code> method to validate
+            the contact data and return an array with validation
+            errors.</p></li>
+            <li><p>Use the <code>checkContactDate()</code> method to
             check the validity of the date in the
             <code>contact_form</code> script.</p></li>
-            <li><p>Use the <code>checkBirthday</code> function to
+            <li><p>Use the <code>checkBirthday()</code> method to
             calculate the numbers of days until the contact’s birthday
             in the <code>contact_form</code> script. If the number of
             days returned is 0, show the message:</p>
