@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-UK" xml:lang="en-UK" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>Unit 11. Practice 11.1</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+        /* CSS for syntax highlighting */
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        .sourceCode { overflow: visible; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {  background-color: #f8f8f8; }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ef2929; } /* Alert */
+        code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+        code span.at { color: #204a87; } /* Attribute */
+        code span.bn { color: #0000cf; } /* BaseN */
+        code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+        code span.ch { color: #4e9a06; } /* Char */
+        code span.cn { color: #8f5902; } /* Constant */
+        code span.co { color: #8f5902; font-style: italic; } /* Comment */
+        code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+        code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+        code span.dt { color: #204a87; } /* DataType */
+        code span.dv { color: #0000cf; } /* DecVal */
+        code span.er { color: #a40000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.fl { color: #0000cf; } /* Float */
+        code span.fu { color: #204a87; font-weight: bold; } /* Function */
+        code span.im { } /* Import */
+        code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+        code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+        code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+        code span.ot { color: #8f5902; } /* Other */
+        code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+        code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+        code span.ss { color: #4e9a06; } /* SpecialString */
+        code span.st { color: #4e9a06; } /* String */
+        code span.va { color: #000000; } /* Variable */
+        code span.vs { color: #4e9a06; } /* VerbatimString */
+        code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <link rel="stylesheet" href="../web_template/aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+      
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Unit 11. Practice 11.1</h1>
+            <!---->
+            <!--  -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                 <ul>
+<li><a href="#practice-11.1.-controllers-and-routes"
+id="toc-practice-11.1.-controllers-and-routes"><span
+class="toc-section-number">1</span> Practice 11.1. Controllers and
+routes</a>
+<ul>
+<li><a href="#application-overview" id="toc-application-overview"><span
+class="toc-section-number">1.1</span> Application overview</a></li>
+<li><a href="#exercise-1.-creating-the-project"
+id="toc-exercise-1.-creating-the-project"><span
+class="toc-section-number">1.2</span> Exercise 1. Creating the
+project</a></li>
+<li><a href="#exercise-2.-creating-the-service"
+id="toc-exercise-2.-creating-the-service"><span
+class="toc-section-number">1.3</span> Exercise 2. Creating the
+Service</a></li>
+<li><a href="#exercise-3.-creating-the-controllers"
+id="toc-exercise-3.-creating-the-controllers"><span
+class="toc-section-number">1.4</span> Exercise 3. Creating the
+controllers</a></li>
+<li><a href="#exercise-4.-making-the-main-page-view"
+id="toc-exercise-4.-making-the-main-page-view"><span
+class="toc-section-number">1.5</span> Exercise 4. Making the Main page
+view</a></li>
+<li><a href="#exercise-5.-making-the-single-book-page-view"
+id="toc-exercise-5.-making-the-single-book-page-view"><span
+class="toc-section-number">1.6</span> Exercise 5. Making the single book
+page view</a></li>
+<li><a href="#exercise-6.-making-the-single-publisher-page-view"
+id="toc-exercise-6.-making-the-single-publisher-page-view"><span
+class="toc-section-number">1.7</span> Exercise 6. Making the single
+publisher page view</a></li>
+<li><a href="#exercise-7.-making-the-book-list-page-view"
+id="toc-exercise-7.-making-the-book-list-page-view"><span
+class="toc-section-number">1.8</span> Exercise 7. Making the book list
+page view</a></li>
+<li><a href="#exercise-8.-creating-the-publisher-list-page-view"
+id="toc-exercise-8.-creating-the-publisher-list-page-view"><span
+class="toc-section-number">1.9</span> Exercise 8. Creating the publisher
+list page view</a></li>
+<li><a href="#how-to-submit-to-github-classroom"
+id="toc-how-to-submit-to-github-classroom"><span
+class="toc-section-number">1.10</span> How to submit to GitHub
+Classroom</a></li>
+</ul></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <h1 data-number="1"
+            id="practice-11.1.-controllers-and-routes"><span
+            class="header-section-number">1</span> Practice 11.1.
+            Controllers and routes</h1>
+            <blockquote>
+            <p>This practice consists of the first of a series of
+            practices, consisting of a Library application. Each
+            practice will be based on the previous one.</p>
+            <p>Once done, do the submission via GitHub Classroom as
+            detailed in the end of the practice.</p>
+            </blockquote>
+            <h2 data-number="1.1" id="application-overview"><span
+            class="header-section-number">1.1</span> Application
+            overview</h2>
+            <p>In this application we are going to make a simple
+            <strong>library</strong>. In this library we will have a
+            list of <strong>books</strong> with their corresponding
+            <strong>publishers</strong>. Each book has a publisher and
+            each publisher can have several books.</p>
+            <p>In the next practice we will build a database for the
+            library, but for now we will use 2 arrays to model the
+            data.</p>
+            <h2 data-number="1.2"
+            id="exercise-1.-creating-the-project"><span
+            class="header-section-number">1.2</span> Exercise 1.
+            Creating the project</h2>
+            <p>Clone the project repository task:</p>
+            <ol type="1">
+            <li>You need a <a href="https://github.com">GitHub</a>
+            account. Create one if you don’t have any.</li>
+            <li>Click on the <a
+            href="https://classroom.github.com/a/R9NdRCrg">assignment
+            invitation link</a>. Enter your GitHub credentials and
+            authorize GitHub Classroom to access your GiHub
+            account.</li>
+            <li>Select your name from the “Join the Classroom”
+            list.</li>
+            <li>Accept the assignment.</li>
+            <li>Go to your assignment repository. Copy the repository
+            URL (http or ssh), that is in the green “Code” button.</li>
+            <li>In your computer, create the project:</li>
+            </ol>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">symfony</span> new library-app <span class="at">--version</span><span class="op">=</span><span class="st">&quot;7.1.*&quot;</span></span></code></pre></div>
+            <ol start="7" type="1">
+            <li>Enter into your project folder and add the remote
+            repository which URL have you copied in the point 5:</li>
+            </ol>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> library-app </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin your_repository_url</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin main</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge origin/main <span class="at">--allow-unrelated-histories</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
+            <ol type="1">
+            <li>Verify that your code has been uploaded to your repo and
+            start coding.</li>
+            </ol>
+            <h2 data-number="1.3"
+            id="exercise-2.-creating-the-service"><span
+            class="header-section-number">1.3</span> Exercise 2.
+            Creating the Service</h2>
+            <p>Create a new PHP class in <code>src/Service</code> named
+            <strong><code>LibraryData.php</code></strong>. This will
+            contain 2 static arrays, for the books and publishers:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode php"><code class="sourceCode php"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="kw">static</span> <span class="va">$books</span> <span class="op">=</span> <span class="dt">array</span> (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">array</span>(<span class="st">&quot;isbn&quot;</span> =&gt; <span class="st">&quot;A111B3&quot;</span><span class="ot">,</span> <span class="st">&quot;title&quot;</span> =&gt; <span class="st">&quot;The Lord of the Rings&quot;</span><span class="ot">,</span> <span class="st">&quot;author&quot;</span> =&gt; <span class="st">&quot;J.R.R. Tolkien&quot;</span><span class="ot">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;pages&quot;</span> =&gt; <span class="dv">1536</span><span class="ot">,</span> <span class="st">&quot;pub_date&quot;</span> =&gt; <span class="st">&quot;2020-11-03&quot;</span><span class="ot">,</span> <span class="st">&quot;publisher&quot;</span> =&gt; <span class="dv">1</span>)<span class="ot">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">array</span>(<span class="st">&quot;isbn&quot;</span> =&gt; <span class="st">&quot;C221B6&quot;</span><span class="ot">,</span> <span class="st">&quot;title&quot;</span> =&gt; <span class="st">&quot;Factotum&quot;</span><span class="ot">,</span> <span class="st">&quot;author&quot;</span> =&gt; <span class="st">&quot;Charles Bukowski&quot;</span><span class="ot">,</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;pages&quot;</span> =&gt; <span class="dv">208</span><span class="ot">,</span> <span class="st">&quot;pub_date&quot;</span> =&gt; <span class="st">&quot;2002-03-31&quot;</span><span class="ot">,</span> <span class="st">&quot;publisher&quot;</span> =&gt; <span class="dv">2</span>)<span class="ot">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">array</span>(<span class="st">&quot;isbn&quot;</span> =&gt; <span class="st">&quot;A546783&quot;</span><span class="ot">,</span> <span class="st">&quot;title&quot;</span> =&gt; <span class="st">&quot;A Wizard of Earthsea&quot;</span><span class="ot">,</span> <span class="st">&quot;author&quot;</span> =&gt; <span class="st">&quot;Ursula K. Le Guin&quot;</span><span class="ot">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;pages&quot;</span> =&gt; <span class="dv">210</span><span class="ot">,</span> <span class="st">&quot;pub_date&quot;</span> =&gt; <span class="st">&quot;2012-09-11&quot;</span><span class="ot">,</span> <span class="st">&quot;publisher&quot;</span> =&gt; <span class="dv">1</span>)<span class="ot">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">array</span>(<span class="st">&quot;isbn&quot;</span> =&gt; <span class="st">&quot;F666764&quot;</span><span class="ot">,</span> <span class="st">&quot;title&quot;</span> =&gt; <span class="st">&quot;The Lathe Of Heaven&quot;</span><span class="ot">,</span> <span class="st">&quot;author&quot;</span> =&gt; <span class="st">&quot;Ursula K. Le Guin&quot;</span><span class="ot">,</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;pages&quot;</span> =&gt; <span class="dv">192</span><span class="ot">,</span> <span class="st">&quot;pub_date&quot;</span> =&gt; <span class="st">&quot;2008-04-15&quot;</span><span class="ot">,</span> <span class="st">&quot;publisher&quot;</span> =&gt; <span class="dv">4</span>)<span class="ot">,</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">array</span>(<span class="st">&quot;isbn&quot;</span> =&gt; <span class="st">&quot;66788745&quot;</span><span class="ot">,</span> <span class="st">&quot;title&quot;</span> =&gt; <span class="st">&quot;Foundation&quot;</span><span class="ot">,</span> <span class="st">&quot;author&quot;</span> =&gt; <span class="st">&quot;Isaac Asimov&quot;</span><span class="ot">,</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;pages&quot;</span> =&gt; <span class="dv">816</span><span class="ot">,</span> <span class="st">&quot;pub_date&quot;</span> =&gt; <span class="st">&quot;2022-07-07&quot;</span><span class="ot">,</span> <span class="st">&quot;publisher&quot;</span> =&gt; <span class="kw">null</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)<span class="ot">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="kw">static</span> <span class="va">$publishers</span> <span class="op">=</span> <span class="dt">array</span> (</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">array</span> (<span class="st">&quot;id&quot;</span>=&gt; <span class="dv">1</span><span class="ot">,</span> <span class="st">&quot;name&quot;</span>=&gt;<span class="st">&quot;Clarion Books&quot;</span><span class="ot">,</span> <span class="st">&quot;email&quot;</span>=&gt;<span class="st">&quot;info@clarion.com&quot;</span>)<span class="ot">,</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">array</span> (<span class="st">&quot;id&quot;</span>=&gt; <span class="dv">4</span><span class="ot">,</span> <span class="st">&quot;name&quot;</span>=&gt;<span class="st">&quot;Ecco&quot;</span><span class="ot">,</span> <span class="st">&quot;email&quot;</span>=&gt;<span class="st">&quot;ecco_info@ecco.com&quot;</span>)<span class="ot">,</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">array</span> (<span class="st">&quot;id&quot;</span>=&gt; <span class="dv">2</span><span class="ot">,</span> <span class="st">&quot;name&quot;</span>=&gt;<span class="st">&quot;Scribner&quot;</span><span class="ot">,</span> <span class="st">&quot;email&quot;</span>=&gt;<span class="st">&quot;scribner@scr.com&quot;</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>)<span class="ot">;</span></span></code></pre></div>
+            <p>Create 2 static get methods to get each array.</p>
+            <h2 data-number="1.4"
+            id="exercise-3.-creating-the-controllers"><span
+            class="header-section-number">1.4</span> Exercise 3.
+            Creating the controllers</h2>
+            <p>In this step you must create 3 controllers:</p>
+            <ul>
+            <li>MainPageController</li>
+            <li>BooksController</li>
+            <li>PublishersController</li>
+            </ul>
+            <h2 data-number="1.5"
+            id="exercise-4.-making-the-main-page-view"><span
+            class="header-section-number">1.5</span> Exercise 4. Making
+            the Main page view</h2>
+            <p>In the <strong>MainPageController</strong> we will show a
+            welcome message when a user enters the root of the app.</p>
+            <p>Change the route attribute to:</p>
+            <p><code>#[Route('/', name: 'app_main_page')]</code>.</p>
+            <p>Pass the page title to the view as parameter.</p>
+            <p>In the <strong>Twig template</strong>:</p>
+            <ul>
+            <li><p>Use the <code>path</code> function to make the
+            links.</p></li>
+            <li><p>Use the CSS styles you want. You can also add a
+            custom header and footer, preferably in your base
+            template.</p></li>
+            </ul>
+            <p>The result should be something like:</p>
+            <figure>
+            <img src="images/mainpage.png" width="350"
+            alt="Main page (without styles)" />
+            <figcaption aria-hidden="true">Main page (without
+            styles)</figcaption>
+            </figure>
+            <h2 data-number="1.6"
+            id="exercise-5.-making-the-single-book-page-view"><span
+            class="header-section-number">1.6</span> Exercise 5. Making
+            the single book page view</h2>
+            <p>Change the route attribute to:</p>
+            <p><code>#[Route('/book/{isbn}', name: 'single_book')]</code>.</p>
+            <p>Change the view’s name related to
+            <code>BooksController</code> to
+            <code>single_book.html.twig</code>.</p>
+            <p>Pass the <strong>page title</strong> and the <strong>book
+            array (with the publisher)</strong> as parameters to the
+            view.</p>
+            <p>Show different messages when the ISBN hasn’t been passed
+            and when the ISBN hasn’t been found.</p>
+            <p>The result should be something like:</p>
+            <figure>
+            <img src="images/single_book.png" width="350"
+            alt="Single book page" />
+            <figcaption aria-hidden="true">Single book page</figcaption>
+            </figure>
+            <h2 data-number="1.7"
+            id="exercise-6.-making-the-single-publisher-page-view"><span
+            class="header-section-number">1.7</span> Exercise 6. Making
+            the single publisher page view</h2>
+            <p>Change the route attribute on
+            <code>PublisherController</code> to:</p>
+            <p><code>#[Route('/publisher/{id&lt;\d+&gt;}', name: 'single_publisher')]</code>.</p>
+            <p>Change the view’s name to
+            <code>single_publisher.html.twig</code>.</p>
+            <p>Pass the <strong>page title</strong> and the
+            <strong>publisher array</strong> as parameters to the
+            view.</p>
+            <p>Show different messages when the publisher’s ID hasn’t
+            been passed and when the publisher’s ID hasn’t been
+            found.</p>
+            <p>The result should be something like:</p>
+            <figure>
+            <img src="images/single_publ.png" width="350"
+            alt="Single publisher page" />
+            <figcaption aria-hidden="true">Single publisher
+            page</figcaption>
+            </figure>
+            <h2 data-number="1.8"
+            id="exercise-7.-making-the-book-list-page-view"><span
+            class="header-section-number">1.8</span> Exercise 7. Making
+            the book list page view</h2>
+            <p>Modify the <code>BooksController</code> to add a new
+            route:</p>
+            <p><code>#[Route('/book_list', name: 'book_list')]</code></p>
+            <p>Create the related view so that they use Twig to render
+            the view. Create a new twig file, inside
+            <code>templates/books</code> named
+            <code>book_list.html.twig</code>.</p>
+            <p>For each book we want to show:</p>
+            <ul>
+            <li>A link for opening the book’s page (use the
+            <code>path</code> function)</li>
+            <li>The book’s title</li>
+            <li>The author</li>
+            <li>The publisher</li>
+            <li>The publication data</li>
+            </ul>
+            <p>Pass the page title and the necessary data to view the
+            required data.</p>
+            <p>The result should be something like:</p>
+            <figure>
+            <img src="images/book_list.png" width="400"
+            alt="Book list" />
+            <figcaption aria-hidden="true">Book list</figcaption>
+            </figure>
+            <h2 data-number="1.9"
+            id="exercise-8.-creating-the-publisher-list-page-view"><span
+            class="header-section-number">1.9</span> Exercise 8.
+            Creating the publisher list page view</h2>
+            <p>Modify the <code>PublishersController</code> to add a new
+            route:</p>
+            <p><code>#[Route('/publisher_list', name: 'publisher_list')]</code></p>
+            <p>Create a new twig file, inside
+            <code>templates/publishers</code> named
+            <code>publisher_list.html.twig</code>.</p>
+            <p>For each publisher we want to show:</p>
+            <ul>
+            <li>A link for opening the publishers’s page (use the
+            <code>path</code> function)</li>
+            <li>The publishers’s id</li>
+            <li>The publishers’s name</li>
+            <li>The publishers’s email</li>
+            </ul>
+            <p>Pass the page title and the necessary data to view the
+            required data.</p>
+            <p>The result should be something like:</p>
+            <figure>
+            <img src="images/pub_list.png" width="400"
+            alt="Publisher list" />
+            <figcaption aria-hidden="true">Publisher list</figcaption>
+            </figure>
+            <h2 data-number="1.10"
+            id="how-to-submit-to-github-classroom"><span
+            class="header-section-number">1.10</span> How to submit to
+            GitHub Classroom</h2>
+            <p>Once you finish the task, make a commit with the comment
+            “SUBMISSION COMMIT” and push it to GitHub. It’s recommended
+            to tag your commit with the tag “Practice_11.1”.</p>
+            <p>Before that, you can do the commits and push you want. If
+            you change your code after your submission commit, make
+            another commit and push with the same text in the message
+            adding the corrections you’ve done.</p>
+            <p>If you have any doubt in your task, you can push your
+            code and ask me by email what’s your problem. It will make
+            it easier for both the solutions of code issues.</p>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <!-- Snackbar for copy code -->
+        <div id="snackbar">Codi copiat!</div>
+        <!-- End Snackbar -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+                        
+            /* PER COPIAR CODI */
+
+
+            // Busca tots els elements amb la classe "sourceCode"
+            var sourceCodeElements = document.querySelectorAll('div.sourceCode');
+
+            /*Afegim el botó a tots els divs */
+            // Afegir un botó per a cada element "sourceCode"
+            sourceCodeElements.forEach(function(element) {
+                console.log(element.id);
+                var button = document.createElement('div');
+                button.className = 'button-copy';
+
+                // Afegir una icona al botó (fa servir FontAwesome com a exemple)
+                //var icon = document.createElement('i');
+                //icon.className = 'fas fa-copy'; // Utilitza l'ícona "copy" de FontAwesome
+
+                // Obté l'ID de l'element actual
+                var elementId = element.id;
+
+                // Afegeix un event listener al botó per cridar la funció amb l'ID
+                button.addEventListener('click', function() {
+                    copyContent(elementId);
+                });
+
+                // Afegeix l'icona al botó i el botó just dins de l'element "sourceCode"
+                //button.appendChild(icon);
+                element.appendChild(button);
+            });
+
+
+
+            // Funció per copiar el contingut d'un element amb l'ID donat
+            function copyContent(elementId) {
+                var element = document.getElementById(elementId);
+                var textToCopy = element.innerText;
+
+                // Crea un element de text i copia el contingut
+                var textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                // Selecciona i copia el text
+                textArea.select();
+                document.execCommand('copy');
+
+                // Elimina l'element de text afegit temporalment
+                document.body.removeChild(textArea);
+
+                // Notifica a l'usuari que el codi s'ha copiat
+                mostraSnackbar();
+            }
+
+            /* SNACKBAR EN COPIAR CODI */
+
+            function mostraSnackbar() {
+            // Busquem l'snackbar
+            var x = document.getElementById("snackbar");
+
+            // Li afegim la classe show
+            x.className = "show";
+
+            // I als tres segons la llevem
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            } 
+
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>
