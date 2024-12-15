@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-UK" xml:lang="en-UK" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>Unit 13. Practice 13.2</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+        /* CSS for syntax highlighting */
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        .sourceCode { overflow: visible; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {  background-color: #f8f8f8; }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ef2929; } /* Alert */
+        code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+        code span.at { color: #204a87; } /* Attribute */
+        code span.bn { color: #0000cf; } /* BaseN */
+        code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+        code span.ch { color: #4e9a06; } /* Char */
+        code span.cn { color: #8f5902; } /* Constant */
+        code span.co { color: #8f5902; font-style: italic; } /* Comment */
+        code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+        code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+        code span.dt { color: #204a87; } /* DataType */
+        code span.dv { color: #0000cf; } /* DecVal */
+        code span.er { color: #a40000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.fl { color: #0000cf; } /* Float */
+        code span.fu { color: #204a87; font-weight: bold; } /* Function */
+        code span.im { } /* Import */
+        code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+        code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+        code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+        code span.ot { color: #8f5902; } /* Other */
+        code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+        code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+        code span.ss { color: #4e9a06; } /* SpecialString */
+        code span.st { color: #4e9a06; } /* String */
+        code span.va { color: #000000; } /* Variable */
+        code span.vs { color: #4e9a06; } /* VerbatimString */
+        code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <link rel="stylesheet" href="../web_template/aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+      
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Unit 13. Practice 13.2</h1>
+            <!---->
+            <!--  -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                 <ul>
+<li><a href="#practice-13.2.-forms-with-symfony"
+id="toc-practice-13.2.-forms-with-symfony"><span
+class="toc-section-number">1</span> Practice 13.2. Forms with
+Symfony</a>
+<ul>
+<li><a href="#overview" id="toc-overview"><span
+class="toc-section-number">1.1</span> Overview</a></li>
+<li><a href="#exercise-1.-book-form"
+id="toc-exercise-1.-book-form"><span
+class="toc-section-number">1.2</span> Exercise 1. Book form</a></li>
+<li><a href="#exercise-2.-publisher-form"
+id="toc-exercise-2.-publisher-form"><span
+class="toc-section-number">1.3</span> Exercise 2. Publisher
+form</a></li>
+<li><a href="#exercise-3.-search-books-form"
+id="toc-exercise-3.-search-books-form"><span
+class="toc-section-number">1.4</span> Exercise 3. Search books
+form</a></li>
+<li><a href="#exercise-4.-search-publishers-form"
+id="toc-exercise-4.-search-publishers-form"><span
+class="toc-section-number">1.5</span> Exercise 4. Search publishers
+form</a></li>
+<li><a href="#how-to-submit-to-github-classroom"
+id="toc-how-to-submit-to-github-classroom"><span
+class="toc-section-number">1.6</span> How to submit to GitHub
+Classroom</a></li>
+</ul></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <h1 data-number="1"
+            id="practice-13.2.-forms-with-symfony"><span
+            class="header-section-number">1</span> Practice 13.2. Forms
+            with Symfony</h1>
+            <blockquote>
+            <p>The mark of this practice <strong>can increase the mark
+            of the second evaluation by 0.5 points</strong>, provided
+            that the marks of the practice part and the exam are at
+            least 5.</p>
+            <p>It’s recommended to do this practice after the practice
+            13.1.</p>
+            <p>Before start, create a new git branch named
+            <code>library-u13.2</code> and switch to it:</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch library-u13.2</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout library-u13.2</span></code></pre></div>
+            <p>Do all the practice in the <code>library-u13.2</code>
+            branch. Once finished, do the submission via GitHub
+            Classroom as detailed at the end of the practice.</p>
+            </blockquote>
+            <h2 data-number="1.1" id="overview"><span
+            class="header-section-number">1.1</span> Overview</h2>
+            <p>In this practice we’re going to do the forms to view and
+            edit the data of our library app. The required forms
+            are:</p>
+            <ul>
+            <li>A form for editing, deleting and adding books.</li>
+            <li>A form for editing, deleting and adding publishers.</li>
+            <li>A form for searching books by title and author.</li>
+            <li>A form for searching publishers by name.</li>
+            </ul>
+            <p>Use the styles you want.</p>
+            <p>Add to each page a navigation bar or links to return to
+            the main pages. All the pages must be accessed by buttons or
+            links.</p>
+            <p>At the end of the practice, remove or comment the routes
+            and code unused.</p>
+            <figure>
+            <img src="images/main_page.png" width="300"
+            alt="Main page" />
+            <figcaption aria-hidden="true">Main page</figcaption>
+            </figure>
+            <h2 data-number="1.2" id="exercise-1.-book-form"><span
+            class="header-section-number">1.2</span> Exercise 1. Book
+            form</h2>
+            <p>Create a form for editing, deleting and adding a new
+            book.</p>
+            <p>The form can be included in the
+            <em><code>single book</code></em> view and in the
+            <em><code>new book</code></em> view.</p>
+            <p>The publisher must be selected by a <code>select</code>
+            input or similar. Remember that the publisher can be empty
+            (<code>null</code>).</p>
+            <p>Choose an appropriate range of years for the publication
+            date, i.e. from the year 1000 to the current year.</p>
+            <p>The validation must be done in the server (disable the
+            client-side validation) and must have the next
+            restrictions:</p>
+            <ul>
+            <li>ISBN and title required</li>
+            <li>Pages, a numeric value equal or greater than zero.</li>
+            </ul>
+            <figure>
+            <img src="images/book%20form.png" alt="Book form" />
+            <figcaption aria-hidden="true">Book form</figcaption>
+            </figure>
+            <h2 data-number="1.3" id="exercise-2.-publisher-form"><span
+            class="header-section-number">1.3</span> Exercise 2.
+            Publisher form</h2>
+            <p>Create a form for editing, deleting and adding a new
+            publisher.</p>
+            <p>The form can be included in the
+            <em><code>single publisher</code></em> view and in the
+            <em><code>new publisher</code></em> view.</p>
+            <p>The validation must be done in the server (disable the
+            client-side validation) and must have the next
+            restrictions:</p>
+            <ul>
+            <li>Name required</li>
+            <li>Email, not required and email format.</li>
+            </ul>
+            <figure>
+            <img src="images/publisher%20form.png"
+            alt="Publisher form" />
+            <figcaption aria-hidden="true">Publisher form</figcaption>
+            </figure>
+            <h2 data-number="1.4"
+            id="exercise-3.-search-books-form"><span
+            class="header-section-number">1.4</span> Exercise 3. Search
+            books form</h2>
+            <p>Create a form for searching a book by title and
+            author.</p>
+            <p>Make a new view for the form. You can reuse the
+            <code>/book/search/{title}/{author}</code> renaming it to
+            <code>/book/search</code>.</p>
+            <p>The fields must accept empty strings.</p>
+            <p>The result should be shown in the <code>book list</code>
+            view, as in the previous practice.</p>
+            <figure>
+            <img src="images/search%20book%20form.png"
+            alt="Search books form" />
+            <figcaption aria-hidden="true">Search books
+            form</figcaption>
+            </figure>
+            <h2 data-number="1.5"
+            id="exercise-4.-search-publishers-form"><span
+            class="header-section-number">1.5</span> Exercise 4. Search
+            publishers form</h2>
+            <p>Create a form for searching a publisher by its name.</p>
+            <p>Embed the form in the publisher list view instead of
+            creating a new view.</p>
+            <p>The field must accept empty strings.</p>
+            <p>The result should be shown in the
+            <code>publisher list</code> view, as in the previous
+            practice.</p>
+            <figure>
+            <img src="images/publisher%20list.png"
+            alt="Publisher list with the publisher search form" />
+            <figcaption aria-hidden="true">Publisher list with the
+            publisher search form</figcaption>
+            </figure>
+            <h2 data-number="1.6"
+            id="how-to-submit-to-github-classroom"><span
+            class="header-section-number">1.6</span> How to submit to
+            GitHub Classroom</h2>
+            <p>nce you finish the task, make a commit with the comment
+            “PRACTICE 13.2 SUBMISSION COMMIT” and push it to GitHub.
+            Make a <strong>pull-request</strong> so that i could know
+            your code is submitted.</p>
+            <ol type="1">
+            <li>This task must be submitted to the same repository of
+            the previous one. Remember to make a new branch before
+            starting the practice.</li>
+            <li>Once you finish the task, make a commit with the comment
+            “PRACTICE 13.2 SUBMISSION COMMIT”, merge the branch into the
+            main branch, and push it to GitHub. For example:</li>
+            </ol>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;PRACTICE 13.2 SUBMISSION COMMIT&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge library-u13.2</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div>
+            <ol start="3" type="1">
+            <li><p>It’s recommended to tag your commit with the tag
+            “Practice_13.2”.</p></li>
+            <li><p>Before that, you can do the commits and push you
+            want. If you change your code after your submission commit,
+            make another commit and push with the same text in the
+            message adding the corrections you’ve done.</p></li>
+            </ol>
+            <p>If you have any doubt in your task, you can push your
+            code and ask me by email what’s your problem. It will make
+            it easier for both the solutions of code issues.</p>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <!-- Snackbar for copy code -->
+        <div id="snackbar">Codi copiat!</div>
+        <!-- End Snackbar -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+                        
+            /* PER COPIAR CODI */
+
+
+            // Busca tots els elements amb la classe "sourceCode"
+            var sourceCodeElements = document.querySelectorAll('div.sourceCode');
+
+            /*Afegim el botó a tots els divs */
+            // Afegir un botó per a cada element "sourceCode"
+            sourceCodeElements.forEach(function(element) {
+                console.log(element.id);
+                var button = document.createElement('div');
+                button.className = 'button-copy';
+
+                // Afegir una icona al botó (fa servir FontAwesome com a exemple)
+                //var icon = document.createElement('i');
+                //icon.className = 'fas fa-copy'; // Utilitza l'ícona "copy" de FontAwesome
+
+                // Obté l'ID de l'element actual
+                var elementId = element.id;
+
+                // Afegeix un event listener al botó per cridar la funció amb l'ID
+                button.addEventListener('click', function() {
+                    copyContent(elementId);
+                });
+
+                // Afegeix l'icona al botó i el botó just dins de l'element "sourceCode"
+                //button.appendChild(icon);
+                element.appendChild(button);
+            });
+
+
+
+            // Funció per copiar el contingut d'un element amb l'ID donat
+            function copyContent(elementId) {
+                var element = document.getElementById(elementId);
+                var textToCopy = element.innerText;
+
+                // Crea un element de text i copia el contingut
+                var textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                // Selecciona i copia el text
+                textArea.select();
+                document.execCommand('copy');
+
+                // Elimina l'element de text afegit temporalment
+                document.body.removeChild(textArea);
+
+                // Notifica a l'usuari que el codi s'ha copiat
+                mostraSnackbar();
+            }
+
+            /* SNACKBAR EN COPIAR CODI */
+
+            function mostraSnackbar() {
+            // Busquem l'snackbar
+            var x = document.getElementById("snackbar");
+
+            // Li afegim la classe show
+            x.className = "show";
+
+            // I als tres segons la llevem
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            } 
+
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>
