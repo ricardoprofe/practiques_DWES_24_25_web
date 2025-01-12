@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-UK" xml:lang="en-UK" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>Unit 15. Practice 15.1</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+        /* CSS for syntax highlighting */
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        .sourceCode { overflow: visible; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {  background-color: #f8f8f8; }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ef2929; } /* Alert */
+        code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+        code span.at { color: #204a87; } /* Attribute */
+        code span.bn { color: #0000cf; } /* BaseN */
+        code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+        code span.ch { color: #4e9a06; } /* Char */
+        code span.cn { color: #8f5902; } /* Constant */
+        code span.co { color: #8f5902; font-style: italic; } /* Comment */
+        code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+        code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+        code span.dt { color: #204a87; } /* DataType */
+        code span.dv { color: #0000cf; } /* DecVal */
+        code span.er { color: #a40000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.fl { color: #0000cf; } /* Float */
+        code span.fu { color: #204a87; font-weight: bold; } /* Function */
+        code span.im { } /* Import */
+        code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+        code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+        code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+        code span.ot { color: #8f5902; } /* Other */
+        code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+        code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+        code span.ss { color: #4e9a06; } /* SpecialString */
+        code span.st { color: #4e9a06; } /* String */
+        code span.va { color: #000000; } /* Variable */
+        code span.vs { color: #4e9a06; } /* VerbatimString */
+        code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <link rel="stylesheet" href="../web_template/aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+      
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Unit 15. Practice 15.1</h1>
+            <!---->
+            <!--  -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                 <ul>
+<li><a href="#practice-15.1.-databases-with-node.js-and-mongodb"
+id="toc-practice-15.1.-databases-with-node.js-and-mongodb"><span
+class="toc-section-number">1</span> Practice 15.1. Databases with
+Node.js and MongoDB</a>
+<ul>
+<li><a href="#application-overview" id="toc-application-overview"><span
+class="toc-section-number">1.1</span> Application overview</a></li>
+<li><a href="#exercise-1.-creating-the-project"
+id="toc-exercise-1.-creating-the-project"><span
+class="toc-section-number">1.2</span> Exercise 1. Creating the
+project</a></li>
+<li><a href="#exercise-2.-populating-the-database"
+id="toc-exercise-2.-populating-the-database"><span
+class="toc-section-number">1.3</span> Exercise 2. Populating the
+database</a></li>
+<li><a href="#exercise-3.-models" id="toc-exercise-3.-models"><span
+class="toc-section-number">1.4</span> Exercise 3. Models</a></li>
+<li><a href="#exercise-4.-select-queries"
+id="toc-exercise-4.-select-queries"><span
+class="toc-section-number">1.5</span> Exercise 4. Select
+queries</a></li>
+<li><a href="#exercise-5.-insert-queries"
+id="toc-exercise-5.-insert-queries"><span
+class="toc-section-number">1.6</span> Exercise 5. Insert
+queries</a></li>
+<li><a href="#exercise-6.-update-queries"
+id="toc-exercise-6.-update-queries"><span
+class="toc-section-number">1.7</span> Exercise 6. Update
+queries</a></li>
+<li><a href="#exercise-7.-delete-queries"
+id="toc-exercise-7.-delete-queries"><span
+class="toc-section-number">1.8</span> Exercise 7. Delete
+queries</a></li>
+<li><a href="#how-to-submit-to-github-classroom"
+id="toc-how-to-submit-to-github-classroom"><span
+class="toc-section-number">1.9</span> How to submit to GitHub
+Classroom</a></li>
+</ul></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <h1 data-number="1"
+            id="practice-15.1.-databases-with-node.js-and-mongodb"><span
+            class="header-section-number">1</span> Practice 15.1.
+            Databases with Node.js and MongoDB</h1>
+            <blockquote>
+            <p>This practice consists of the first of a series of
+            practices, consisting of a Book’s review application. Each
+            practice will be based on the previous one.</p>
+            <p>Once done, do the submission via GitHub Classroom as
+            detailed in the end of the practice.</p>
+            </blockquote>
+            <h2 data-number="1.1" id="application-overview"><span
+            class="header-section-number">1.1</span> Application
+            overview</h2>
+            <p>In this app we want to do a book’s review API. In the
+            database we will store a list of books and each book will
+            contain a list of reviews.</p>
+            <p>In this practice we will create the database and operate
+            with some data.</p>
+            <h2 data-number="1.2"
+            id="exercise-1.-creating-the-project"><span
+            class="header-section-number">1.2</span> Exercise 1.
+            Creating the project</h2>
+            <p>Clone the project repository task:</p>
+            <ol type="1">
+            <li>You need a <a href="https://github.com">GitHub</a>
+            account. Create one if you don’t have any.</li>
+            <li>Click on the <a
+            href="https://classroom.github.com/a/u9U-VzAR">assignment
+            invitation link</a>. Enter your GitHub credentials and
+            authorize GitHub Classroom to access your GiHub
+            account.</li>
+            <li>Select your name from the “Join the Classroom”
+            list.</li>
+            <li>Accept the assignment.</li>
+            <li>Go to your assignment repository. Copy the repository
+            URL (http or ssh), that is in the green “Code” button.</li>
+            <li>In your computer, clone the project on your practices
+            folder:</li>
+            </ol>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone your_repo_url</span></code></pre></div>
+            <ol start="7" type="1">
+            <li>Enter into your project folder and initialize your
+            project with npm:</li>
+            </ol>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> init</span></code></pre></div>
+            <ol start="8" type="1">
+            <li>Start coding.</li>
+            </ol>
+            <h2 data-number="1.3"
+            id="exercise-2.-populating-the-database"><span
+            class="header-section-number">1.3</span> Exercise 2.
+            Populating the database</h2>
+            <p>In order to having some data in the DB, you can execute
+            the next query on your MongoDB console (you need MongoDB
+            installed locally or on a Docker container, if you don’t
+            have it, review the Unit 15 annex):</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="er">db.books.insertMany(</span><span class="ot">[</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;isbn&quot;</span><span class="fu">:</span> <span class="st">&quot;A22334&quot;</span><span class="fu">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;The Lathe Of Heaven&quot;</span><span class="fu">,</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;author&quot;</span><span class="fu">:</span> <span class="st">&quot;Ursula K. Le Guin&quot;</span><span class="fu">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;publisher&quot;</span><span class="fu">:</span> <span class="st">&quot;Scribner&quot;</span><span class="fu">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;year&quot;</span><span class="fu">:</span> <span class="dv">2023</span><span class="fu">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;reviews&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;date&quot;</span><span class="fu">:</span> <span class="er">ISODate(&#39;</span><span class="dv">2024</span><span class="er">-01-04T17:</span><span class="dv">49</span><span class="er">:</span><span class="fl">36.143</span><span class="er">Z&#39;)</span><span class="fu">,</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;mark&quot;</span><span class="fu">:</span> <span class="dv">4</span><span class="fu">,</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;A rare and powerful synthesis of poetry and science, reason and emotion.&quot;</span><span class="fu">,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;author&quot;</span><span class="fu">:</span> <span class="st">&quot;The New York Times&quot;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;date&quot;</span><span class="fu">:</span> <span class="er">ISODate(&#39;</span><span class="dv">2023</span><span class="er">-01-08T00:00:00.000Z&#39;)</span><span class="fu">,</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;mark&quot;</span><span class="fu">:</span> <span class="dv">3</span><span class="fu">,</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Gracefully developed...extremely inventive&quot;</span><span class="fu">,</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;author&quot;</span><span class="fu">:</span> <span class="st">&quot;Newsweek&quot;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;isbn&quot;</span><span class="fu">:</span> <span class="st">&quot;B33445&quot;</span><span class="fu">,</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Lazarillo de Tormes&quot;</span><span class="fu">,</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;publisher&quot;</span><span class="fu">:</span> <span class="st">&quot;Alfaguara&quot;</span><span class="fu">,</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;year&quot;</span><span class="fu">:</span> <span class="dv">2010</span><span class="fu">,</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;reviews&quot;</span><span class="fu">:</span> <span class="ot">[]</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;isbn&quot;</span><span class="fu">:</span> <span class="st">&quot;C55667&quot;</span><span class="fu">,</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;The Lord of The Rings&quot;</span><span class="fu">,</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;author&quot;</span><span class="fu">:</span> <span class="st">&quot;J.R.R. Tolkien&quot;</span><span class="fu">,</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;publisher&quot;</span><span class="fu">:</span> <span class="st">&quot;Clarion Books&quot;</span><span class="fu">,</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;year&quot;</span><span class="fu">:</span> <span class="dv">2019</span><span class="fu">,</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;reviews&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;mark&quot;</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Amazing story of courage and friendship&quot;</span><span class="fu">,</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;author&quot;</span><span class="fu">:</span> <span class="st">&quot;J. Goodell&quot;</span><span class="fu">,</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;date&quot;</span><span class="fu">:</span> <span class="er">ISODate(&#39;</span><span class="dv">2024</span><span class="er">-01-04T22:</span><span class="dv">28</span><span class="er">:</span><span class="fl">11.231</span><span class="er">Z&#39;)</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="ot">]</span><span class="er">)</span></span></code></pre></div>
+            <h2 data-number="1.4" id="exercise-3.-models"><span
+            class="header-section-number">1.4</span> Exercise 3.
+            Models</h2>
+            <p>Install Mongoose in your App. Then create the next schema
+            for <code>book</code>:</p>
+            <ul>
+            <li>isbn: String, required, unique, minimum length 6
+            characters.</li>
+            <li>title: String, required.</li>
+            <li>author: String.</li>
+            <li>publisher: String.</li>
+            <li>year: Number, between 1000 and 3000.</li>
+            <li>reviews: array:
+            <ul>
+            <li>date: type date, default value current date.</li>
+            <li>mark: Number, between 1 and 5, default value 1.</li>
+            <li>text: String.</li>
+            <li>author: String, required.</li>
+            </ul></li>
+            </ul>
+            <p>Trim all the data too.</p>
+            <h2 data-number="1.5" id="exercise-4.-select-queries"><span
+            class="header-section-number">1.5</span> Exercise 4. Select
+            queries</h2>
+            <p>Create a script called <code>select_test.js</code> with
+            the next queries:</p>
+            <ul>
+            <li>The list of all the books with the reviews for each book
+            (not only the id).</li>
+            <li>All the data for one book (including the reviews)
+            selected by its <code>id</code>.</li>
+            <li>All the data for one book selected by its ISBN.</li>
+            <li>A list of all the books, with all the data, searched by
+            title, case insensitive. For example if the value of the
+            search string is <code>'the'</code>, the query must return
+            <em>‘The Lathe Of Heaven’</em> and <em>‘The Lord of The
+            Rings’</em>. Tip: use regular expressions.</li>
+            </ul>
+            <p>Print the results and errors on the console, preceding
+            each query by its description (for instance <em>‘Find by
+            ISBN result: …’</em>)</p>
+            <h2 data-number="1.6" id="exercise-5.-insert-queries"><span
+            class="header-section-number">1.6</span> Exercise 5. Insert
+            queries</h2>
+            <p>Create a script called <code>insert_test.js</code> that
+            inserts 2 new books, one with all the fields and 2 reviews
+            and the other one without reviews and with some blank (not
+            required) fields.</p>
+            <p>Print the results and errors on the console.</p>
+            <h2 data-number="1.7" id="exercise-6.-update-queries"><span
+            class="header-section-number">1.7</span> Exercise 6. Update
+            queries</h2>
+            <p>Create a script called <code>update_test.js</code>. On it
+            do 2 update queries, searching by the book’s id:</p>
+            <ul>
+            <li>Modify some data of a book.</li>
+            <li>Add a new review to an existing book (tip: use
+            <code>$push</code> instead of <code>$set</code>).</li>
+            </ul>
+            <p>Print the results and errors on the console.</p>
+            <h2 data-number="1.8" id="exercise-7.-delete-queries"><span
+            class="header-section-number">1.8</span> Exercise 7. Delete
+            queries</h2>
+            <p>Create a script called <code>delete_test.js</code>. On it
+            delete a book searching by its id.</p>
+            <h2 data-number="1.9"
+            id="how-to-submit-to-github-classroom"><span
+            class="header-section-number">1.9</span> How to submit to
+            GitHub Classroom</h2>
+            <p>Once you finish the task, make a commit with the comment
+            “PRACTICE 15.1 SUBMISSION COMMIT” and push it to GitHub.
+            It’s recommended to tag your commit with the tag
+            “Practice_15.1”.</p>
+            <p>Before that, you can do the commits and pushes you want.
+            If you change your code after your submission commit, make
+            another commit and push with the same text in the message
+            adding the corrections you’ve done.</p>
+            <p>If you have any doubt in your task, you can push your
+            code and ask me by email what’s your problem. It will make
+            it easier for both the solutions of code issues.</p>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <!-- Snackbar for copy code -->
+        <div id="snackbar">Codi copiat!</div>
+        <!-- End Snackbar -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+                        
+            /* PER COPIAR CODI */
+
+
+            // Busca tots els elements amb la classe "sourceCode"
+            var sourceCodeElements = document.querySelectorAll('div.sourceCode');
+
+            /*Afegim el botó a tots els divs */
+            // Afegir un botó per a cada element "sourceCode"
+            sourceCodeElements.forEach(function(element) {
+                console.log(element.id);
+                var button = document.createElement('div');
+                button.className = 'button-copy';
+
+                // Afegir una icona al botó (fa servir FontAwesome com a exemple)
+                //var icon = document.createElement('i');
+                //icon.className = 'fas fa-copy'; // Utilitza l'ícona "copy" de FontAwesome
+
+                // Obté l'ID de l'element actual
+                var elementId = element.id;
+
+                // Afegeix un event listener al botó per cridar la funció amb l'ID
+                button.addEventListener('click', function() {
+                    copyContent(elementId);
+                });
+
+                // Afegeix l'icona al botó i el botó just dins de l'element "sourceCode"
+                //button.appendChild(icon);
+                element.appendChild(button);
+            });
+
+
+
+            // Funció per copiar el contingut d'un element amb l'ID donat
+            function copyContent(elementId) {
+                var element = document.getElementById(elementId);
+                var textToCopy = element.innerText;
+
+                // Crea un element de text i copia el contingut
+                var textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+
+                // Selecciona i copia el text
+                textArea.select();
+                document.execCommand('copy');
+
+                // Elimina l'element de text afegit temporalment
+                document.body.removeChild(textArea);
+
+                // Notifica a l'usuari que el codi s'ha copiat
+                mostraSnackbar();
+            }
+
+            /* SNACKBAR EN COPIAR CODI */
+
+            function mostraSnackbar() {
+            // Busquem l'snackbar
+            var x = document.getElementById("snackbar");
+
+            // Li afegim la classe show
+            x.className = "show";
+
+            // I als tres segons la llevem
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            } 
+
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>
